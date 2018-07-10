@@ -1,6 +1,8 @@
 package com.qa.service;
 
 import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
 import java.util.Optional;
 
 import com.qa.accounts.Account;
@@ -57,6 +59,19 @@ public Account findAccount(long id) {
 	
 	
 	
+	
+}
+
+public int getNameCount(String Name) {
+	
+	int count = 0;
+	
+	for (Map.Entry<Long, Account> entry : this.accounts.entrySet()) {
+	    if(entry.getValue().getFirstName().equals(Name)) {
+	    	count ++;
+	    }
+	}
+	return count;
 	
 }
 

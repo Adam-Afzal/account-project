@@ -2,6 +2,7 @@ package com.qa.Account.AccountApplication;
 import static org.junit.Assert.*;
 
 import java.util.HashMap;
+import java.util.Iterator;
 
 import org.junit.Test;
 
@@ -62,7 +63,18 @@ public class AccountTest {
 	
 	
 	@Test
-	public void countSimilarNamesTest() {
+	public void nameCountTest() {
 		Account testAccount1 = new Account(0122,"Adam","Afzal","12341");
+		Account testAccount2 = new Account(0123,"Adam","Afzal","12342");
+		AccountService testAS = new AccountService();
+		testAS.addAccount(testAccount1);
+		testAS.addAccount(testAccount2);
+		
+		HashMap<Long,Account> testHashMap = testAS.getAccounts();
+		
+	   assertEquals(2, testAS.getNameCount("Adam"));
+		
+		
+		
 	}
 }
