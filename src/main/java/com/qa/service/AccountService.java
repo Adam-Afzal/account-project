@@ -1,6 +1,7 @@
 package com.qa.service;
 
 import java.util.HashMap;
+import java.util.Optional;
 
 import com.qa.accounts.Account;
 import com.qa.constants.Constants;
@@ -16,7 +17,7 @@ public void createAccount(Account a) {
 
 public void updateAccount(long id, String newFirst, String newLast, String newNumber) {
 	
-	if(accounts.containsKey(id)) {
+	if(this.accounts.containsKey(id)) {
 		
 		Account b = accounts.get(id);
 		b.setFirstName(newFirst);
@@ -34,6 +35,29 @@ public void deleteAccount(long id) {
 	
 	accounts.remove(id);
 }
-
+public void addAccount(Account a) {
+	
+	this.accounts.put(a.getID(), a);
+}
+public HashMap<Long,Account> getAccounts(){
+	
+	return this.accounts;
+}
+public Account findAccount(long id) {
+	Account a = new Account(0000,"","","");
+	
+	if(this.accounts.containsKey(id)) {
+		
+	return this.accounts.get(id);
+			
+	
+	}
+	
+	return a;
+	
+	
+	
+	
+}
 
 }
