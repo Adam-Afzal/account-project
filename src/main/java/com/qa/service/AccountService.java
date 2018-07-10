@@ -64,15 +64,18 @@ public Account findAccount(long id) {
 
 public int getNameCount(String Name) {
 	
-	int count = 0;
+//	int count = 0;
+//	
+//	for (Map.Entry<Long, Account> entry : this.accounts.entrySet()) {
+//	    if(entry.getValue().getFirstName().equals(Name)) {
+//	    	count ++;
+//	    }
+//	}
+//	return count;
 	
-	for (Map.Entry<Long, Account> entry : this.accounts.entrySet()) {
-	    if(entry.getValue().getFirstName().equals(Name)) {
-	    	count ++;
-	    }
-	}
-	return count;
 	
+	
+	return (int) this.accounts.values().stream().filter(s -> s.getFirstName().equals(Name)).count();
 }
 
 }
