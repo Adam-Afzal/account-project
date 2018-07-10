@@ -1,6 +1,9 @@
-package com.qa.Account.AccountApplication;
+package com.qa.service;
 
 import java.util.HashMap;
+
+import com.qa.accounts.Account;
+import com.qa.constants.Constants;
 
 public class AccountService {
 	
@@ -20,6 +23,9 @@ public void updateAccount(long id, String newFirst, String newLast, String newNu
 		b.setLastName(newLast);
 		b.setAccountNumber(newNumber);
 		accounts.put(id, b);
+	} else {
+		
+	System.out.println(Constants.ERROR_MESSAGE);
 	}
 	
 }
@@ -28,4 +34,6 @@ public void deleteAccount(long id) {
 	
 	accounts.remove(id);
 }
+
+
 }

@@ -1,4 +1,4 @@
-package com.qa.Account.AccountApplication;
+package com.qa.accounts;
 
 public class Account {
 	
@@ -43,6 +43,13 @@ public void setID(long id) {
 
 	public void setAccountNumber(String accountNumber) {
 		this.accountNumber = accountNumber;
+	}
+	
+	public String toString() {
+		
+		return "Account ID: " + this.getID() + " Account Number: " 
+		+ this.getAccountNumber() + " First Name: " + this.getFirstName() +
+		" Last Name: " + this.getLastName();
 	}
 	
 	
